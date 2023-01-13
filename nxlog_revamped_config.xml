@@ -1,0 +1,55 @@
+<QueryList>
+	<Query Id="0" Path="Security">
+		<Select Path="Security">(*[System[EventID=4688]] and *[EventData[Data[@Name='NewProcessName'] = ('C:\Windows\System32\arp.exe')]])
+			or (*[System[EventID=4688]] and *[EventData[Data[@Name='NewProcessName'] = ('C:\Windows\System32\cmd.exe')]])
+			or (*[System[EventID=4688]] and *[EventData[Data[@Name='NewProcessName'] = ('C:\Windows\System32\ipconfig.exe')]])
+			or (*[System[EventID=4688]] and *[EventData[Data[@Name='NewProcessName'] = ('C:\Windows\System32\finger.exe')]])
+			or (*[System[EventID=4688]] and *[EventData[Data[@Name='NewProcessName'] = ('C:\Windows\System32\net.exe')]])
+			or (*[System[EventID=4688]] and *[EventData[Data[@Name='NewProcessName'] = ('C:\Windows\System32\netsh.exe')]])
+			or (*[System[EventID=4688]] and *[EventData[Data[@Name='NewProcessName'] = ('C:\Windows\System32\netstat.exe')]])
+			or (*[System[EventID=4688]] and *[EventData[Data[@Name='NewProcessName'] = ('C:\Windows\System32\nltest.exe')]])
+			or (*[System[EventID=4688]] and *[EventData[Data[@Name='NewProcessName'] = ('C:\Windows\System32\nslookup.exe')]])
+			or (*[System[EventID=4688]] and *[EventData[Data[@Name='NewProcessName'] = ('C:\Windows\System32\ping.exe')]])
+			or (*[System[EventID=4688]] and *[EventData[Data[@Name='NewProcessName'] = ('C:\Windows\System32\regsvr32')]])
+			or (*[System[EventID=4688]] and *[EventData[Data[@Name='NewProcessName'] = ('C:\Windows\System32\route.exe')]])
+			or (*[System[EventID=4688]] and *[EventData[Data[@Name='NewProcessName'] = ('C:\Windows\System32\rundll32.exe')]])
+			or (*[System[EventID=4688]] and *[EventData[Data[@Name='NewProcessName'] = ('C:\Windows\System32\sc.exe')]])
+			or (*[System[EventID=4688]] and *[EventData[Data[@Name='NewProcessName'] = ('C:\Windows\System32\schtasks.exe')]])			
+			or (*[System[EventID=4688]] and *[EventData[Data[@Name='NewProcessName'] = ('C:\Windows\System32\systeminfo.exe')]])
+			or (*[System[EventID=4688]] and *[EventData[Data[@Name='NewProcessName'] = ('C:\Windows\System32\tasklist.exe')]])
+			or (*[System[EventID=4688]] and *[EventData[Data[@Name='NewProcessName'] = ('C:\Windows\System32\wbem\wmic.exe')]])
+			or (*[System[EventID=4688]] and *[EventData[Data[@Name='NewProcessName'] = ('C:\Windows\System32\wermgr.exe')]])
+			or (*[System[EventID=4688]] and *[EventData[Data[@Name='NewProcessName'] = ('C:\Windows\System32\whoami.exe')]])
+		</Select>
+	</Query> 
+	<Query Id="1" Path="Microsoft-Windows-PowerShell/Operational">
+		<Select Path="Microsoft-Windows-PowerShell/Operational">*[System[EventID=4104]]</Select>
+	</Query>
+	<Query Id="2" Path="Windows PowerShell">
+		<Select Path="Windows PowerShell">(*[System[EventID=600]]) or (*[System[EventID=800]])</Select>
+	</Query>
+	<Query Id="3" Path="Microsoft-Windows-TerminalServices-RDPClient/Operational">
+		<Select Path="Microsoft-Windows-TerminalServices-RDPClient/Operational">(*[System[EventID=1102]]) or (*[System[EventID=1029]])</Select>
+	</Query>
+	<Query Id="4" Path="Security"> 
+		<Select Path="Security">(*[System[EventID=1102]]) <!--Security audit log is cleared-->
+		or (*[System[EventID=4648]]) <!--Logon was attempted using explicit credentials-->
+		or (*[System[EventID=4657]]) <!--This event generates when a registry key value was modified. It doesn’t generate when a registry key was modified.-->
+		or (*[System[EventID=4670]]) <!--Someone changed the access control list on an object-->
+		or (*[System[EventID=4672]]) <!--Special privileges assigned to new logon-->
+		or (*[System[EventID=4697]]) <!--New service was installed in the system-->
+		or (*[System[EventID=4698]]) <!--Scheduled task was created-->
+		or (*[System[EventID=5145]]) <!--Network share object was checked to see whether client can be granted desired access-->
+		or (*[System[EventID=7045]]) <!--New services are created on the local Windows machine-->
+		or (*[System[EventID=9707]]) <!--Software\Microsoft\Windows\CurrentVersion\Run RunOnce detection-->
+		</Select>
+	</Query>
+	<Query Id="5" Path="System"> 
+		<Select Path="System">(*[System[EventID=104]]) <!--System log file is cleared-->
+		</Select>
+	</Query>
+	<Query Id="6" Path="Microsoft-Windows-VHDMP/Operational"> 
+		<Select Path="Microsoft-Windows-VHDMP/Operational">(*[System[EventID=1]]) <!--When you mount a Virtual Hard Disk (VHD)-->
+		</Select>
+	</Query>	
+</QueryList>
