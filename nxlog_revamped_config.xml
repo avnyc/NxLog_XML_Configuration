@@ -33,7 +33,7 @@
 	</Query>
 	<Query Id="4" Path="Security"> 
 		<Select Path="Security">(*[System[EventID=1102]]) <!--Security audit log is cleared-->
-		or (*[System[EventID=4648]]) <!--Logon was attempted using explicit credentials-->
+		or (*[System[EventID=4648]]) <!--Logon was attempted using explicit credentials--> 
 		or (*[System[EventID=4657]]) <!--This event generates when a registry key value was modified. It doesn’t generate when a registry key was modified.-->
 		or (*[System[EventID=4670]]) <!--Someone changed the access control list on an object-->
 		or (*[System[EventID=4672]]) <!--Special privileges assigned to new logon-->
