@@ -48,8 +48,8 @@
 		<Select Path="System">(*[System[EventID=104]]) <!--System log file is cleared-->
 		</Select>
 	</Query>
-	<Query Id="6" Path="Microsoft-Windows-VHDMP/Operational"> 
-		<Select Path="Microsoft-Windows-VHDMP/Operational">(*[System[EventID=1]]) <!--When you mount a Virtual Hard Disk (VHD)-->
+	<Query Id="6" Path="Microsoft-Windows-VHDMP-Operational"> 
+		<Select Path="Microsoft-Windows-VHDMP-Operational">(*[System[EventID=1]]) <!--When you mount a Virtual Hard Disk (VHD)-->
 		</Select>
 	</Query>	
 </QueryList>
