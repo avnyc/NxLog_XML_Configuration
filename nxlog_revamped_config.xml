@@ -10,7 +10,7 @@
 			or (*[System[EventID=4688]] and *[EventData[Data[@Name='NewProcessName'] = ('C:\Windows\System32\nltest.exe')]])
 			or (*[System[EventID=4688]] and *[EventData[Data[@Name='NewProcessName'] = ('C:\Windows\System32\nslookup.exe')]])
 			or (*[System[EventID=4688]] and *[EventData[Data[@Name='NewProcessName'] = ('C:\Windows\System32\ping.exe')]])
-			or (*[System[EventID=4688]] and *[EventData[Data[@Name='NewProcessName'] = ('C:\Windows\System32\regsvr32')]])
+			or (*[System[EventID=4688]] and *[EventData[Data[@Name='NewProcessName'] = ('C:\Windows\System32\regsvr32.exe')]])
 			or (*[System[EventID=4688]] and *[EventData[Data[@Name='NewProcessName'] = ('C:\Windows\System32\route.exe')]])
 			or (*[System[EventID=4688]] and *[EventData[Data[@Name='NewProcessName'] = ('C:\Windows\System32\rundll32.exe')]])
 			or (*[System[EventID=4688]] and *[EventData[Data[@Name='NewProcessName'] = ('C:\Windows\System32\sc.exe')]])
